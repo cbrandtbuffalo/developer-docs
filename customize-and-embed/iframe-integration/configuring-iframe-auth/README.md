@@ -24,6 +24,8 @@ Interaction with Rocket.Chat iframe can be through the [**using Rocket.Chat API*
 
 * **Using Rocket.Chat API**: You can use[ Rocket.Chat's REST APIs ](https://developer.rocket.chat/reference/api/rest-api/endpoints/other-important-endpoints/authentication-endpoints/login)to authenticate the user if you have the user's password stored or if it is the same between your third-party system and Rocket.Chat. This way, you receive an `authToken` back from Rocket.Chat that should be returned as `loginToken` by your endpoint. If the user does not have a Rocket.Chat account, you can either  [create a user](https://developer.rocket.chat/reference/api/rest-api/endpoints/team-collaboration-endpoints/users-endpoints/create-user-endpoint) as an admin or [register them](https://developer.rocket.chat/reference/api/rest-api/endpoints/team-collaboration-endpoints/users-endpoints/register-user) using the Rocket.Chat REST API.
 
+Your endpoint must return JSON with the login token, as shown below, with the corresponding header "Content-Type: application/json; charset=utf-8".
+
 ```javascript
 {
   "loginToken": "already-saved-or-returned-login-token"
